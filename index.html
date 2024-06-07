@@ -70,9 +70,28 @@
             text-align: center;
             font-family: 'Roboto', sans-serif;
         }
+
+        /* Styles for the back button */
+        .back-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
+    <button class="back-button" onclick="goBack()">Back</button>
+
     <div class="container">
         <div class="section">
             <h2>Severity Assessment</h2>
@@ -111,13 +130,12 @@
                     <td>–</td>
                     <td>–</td>
                     <td>–</td>
-                    <td>–</td>
                 </tr>
                 <tr>
                     <td>FEV1 % Predicted</td>
-                    <td>&gt;80%</td>
+                    <td>&gt;80%</</td>
                     <td>50-80%</td>
-                    <td>30-49%</td>
+                    <td>30-49%</</td>
                     <td>&lt;30%</td>
                     <td>–</td>
                     <td>–</td>
@@ -196,16 +214,16 @@
                 <tr>
                     <td>5-8 Points</td>
                     <td>0.9-4.8%</td>
-                    <td>1-7.2%</td>
-                    <td>4-11.3%</td>
-                    <td>9.9-19.4%</td>
+                    <td>1-7.2%</</td>
+                    <td>4-11.3%</</td>
+                    <td>9.9-19.4%</</td>
                 </tr>
                 <tr>
                     <td>9+ Points</td>
                     <td>7.6-10.5%</td>
                     <td>16.7-52.6%</td>
                     <td>9.9-29.2%</td>
-                    <td>41.2-80.4%</td>
+                    <td>41.2-80.4%</</td>
                 </tr>
             </table>
         </div>
@@ -235,9 +253,9 @@
                 <label for="fev1">FEV1 % Predicted</label>
                 <select id="fev1" name="fev1">
                     <option value="0">&gt; 80%</option>
-                    <option value="1">50-80%</option>
-                    <option value="2">30-49%</option>
-                    <option value="3">&lt; 30%</option>
+                    <option value="1">50-80%</</option>
+                    <option value="2">30-49%</</option>
+                    <option value="3">&lt; 30%</</option>
                 </select>
             </div>
             <!-- Hospital Admissions Criterion -->
@@ -250,7 +268,7 @@
             </div>
             <!-- Exacerbation Frequency Criterion -->
             <div class="form-group">
-                <label for="exacerbations">Exacerbation Frequency in Last 12 Months</label>
+                <label for="exacerbations">Exacerbation Frequency in Last 12 Months</</label>
                 <select id="exacerbations" name="exacerbations">
                     <option value="0">0-2</option>
                     <option value="2">3 or more</option>
@@ -258,11 +276,11 @@
             </div>
             <!-- MRC Dyspnoea Score Criterion -->
             <div class="form-group">
-                <label for="dyspnoea">MRC Dyspnoea Score</label>
+                <label for="dyspnoea">MRC Dyspnoea Score</</label>
                 <select id="dyspnoea" name="dyspnoea">
                     <option value="0">1-3</option>
                     <option value="2">4</option>
-                    <option value="3">5</option>
+                    <option value="3">5</</option>
                 </select>
             </div>
             <!-- Colonisation Status Criterion -->
@@ -270,13 +288,13 @@
                 <label for="colonisation">Colonisation Status</label>
                 <select id="colonisation" name="colonisation">
                     <option value="0">Not colonised</option>
-                    <option value="1">Chronic colonisation</option>
+                    <option value="1">Chronic colonisation</</option>
                     <option value="3">P. aeruginosa colonisation</option>
                 </select>
             </div>
             <!-- Radiological Severity Criterion -->
             <div class="form-group">
-                <label for="radiological-severity">Radiological Severity</label>
+                <label for="radiological-severity">Radiological Severity</</label>
                 <select id="radiological-severity" name="radiological-severity">
                     <option value="0">&lt; 3 lobes involved</option>
                     <option value="1">3 or more lobes or cystic changes</option>
@@ -294,6 +312,10 @@
         </div>
     </div>
     <script>
+        function goBack() {
+            window.history.back();
+        }
+
         function calculateBSI() {
             const form = document.getElementById('bsi-form');
             let score = 0;
